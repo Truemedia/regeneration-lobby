@@ -4,14 +4,31 @@ namespace Regeneration\Lobby\Controllers;
 	class AdminController extends \BaseController
 	{
 		/**
+	     * The layout that should be used for standard HTML responses.
+	     */
+	    protected $layout = 'layouts.crudl';
+
+		/**
 		 * Display a listing of the resource.
 		 *
 		 * @return Response
 		 */
 		public function index()
 		{
-			//
-			die('index');
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.listing', $data); // HTML
+				break;
+			}
 		}
 
 
@@ -22,8 +39,20 @@ namespace Regeneration\Lobby\Controllers;
 		 */
 		public function create()
 		{
-			//
-			die('create');
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.create', $data); // HTML
+				break;
+			}
 		}
 
 
@@ -34,8 +63,20 @@ namespace Regeneration\Lobby\Controllers;
 		 */
 		public function store()
 		{
-			//
-			die('store');
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.store', $data); // HTML
+				break;
+			}
 		}
 
 
@@ -47,8 +88,20 @@ namespace Regeneration\Lobby\Controllers;
 		 */
 		public function show($id)
 		{
-			//
-			die('show ' . $id);
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.show', $data); // HTML
+				break;
+			}
 		}
 
 
@@ -60,8 +113,20 @@ namespace Regeneration\Lobby\Controllers;
 		 */
 		public function edit($id)
 		{
-			//
-			die('edit ' . $id);
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.edit', $data); // HTML
+				break;
+			}
 		}
 
 
@@ -73,8 +138,20 @@ namespace Regeneration\Lobby\Controllers;
 		 */
 		public function update($id)
 		{
-			//
-			die('update ' . $id);
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.update', $data); // HTML
+				break;
+			}
 		}
 
 
@@ -86,7 +163,19 @@ namespace Regeneration\Lobby\Controllers;
 		 */
 		public function destroy($id)
 		{
-			//
-			die('destroy ' . $id);
+			// Consolidate data
+			$data = array('hello' => 'world');
+
+			// Handle request
+			switch (\Request::format())
+			{
+				case 'json':
+					return Response::json($data); // API
+				break;
+
+				default:
+					$this->layout->content = \View::make('lobby::admin.destroy', $data); // HTML
+				break;
+			}
 		}
 	}
